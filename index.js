@@ -1,29 +1,23 @@
 const { ApolloServer, gql } = require('apollo-server')
 
-const books = [
-  {
-    title: 'Dresden Files',
-    author: 'Jim Butcher',
-  },
-  {
-    title: 'Harry Potter',
-    author: 'JK Rowling',
-  },
-]
+const me = {
+  name: 'Matthew Pagan',
+  role: 'Full-Stack Web Developer'
+}
 
 const typeDefs = gql`
-  type Book {
-    title: String
-    author: String
+  type Person {
+    name: String
+    role: String
   }
   type Query {
-    books: [Book]
+    me: Person
   }
 `
 
 const resolvers = {
   Query: {
-    books: () => books,
+    me: () => me,
   }
 }
 
