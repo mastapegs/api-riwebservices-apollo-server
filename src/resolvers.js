@@ -1,11 +1,10 @@
-const me = {
-  name: 'Matthew Pagan',
-  role: 'Full-Stack Web Developer'
-}
+const todos = require('./data/todos')
+const me = require('./data/me')
 
 const resolvers = {
   Query: {
     me: () => me,
+    allTodos: () => todos,
   }
 }
 
